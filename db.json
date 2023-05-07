@@ -3,31 +3,31 @@
         {
             "id": 1,
             "name": "n1",
-            "cost": 1,
+            "cost": 9.99,
             "description": "describe 1"
         },
         {
             "id": 2,
             "name": "n2",
-            "cost": 2,
+            "cost": 7.49,
             "description": "describe 2"
         },
         {
             "id": 3,
             "name": "n3",
-            "cost": 3,
+            "cost": 12.99,
             "description": "describe 3"
         },
         {
             "id": 4,
             "name": "n4",
-            "cost": 4,
+            "cost": 5,
             "description": "describe 4"
         },
         {
             "id": 5,
             "name": "n5",
-            "cost": 5,
+            "cost": 0.99,
             "description": "describe 5"
         }
     ]

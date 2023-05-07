@@ -1,9 +1,20 @@
+const orderList = [];
+let totalCost = 0;
+
 
 //add the item to the order list
 function addToOrder(item){
     //push item to the list
-console.log(item);
+
+    orderList.push(item.name);
+    let h5 = document.createElement("h5");
+    h5.textContent = item.name;
+    document.getElementById("order-list").appendChild(h5);
     //add customize and remove buttons
+    totalCost += item.cost;
+
+
+    document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 }
 
 //populate the menu display
