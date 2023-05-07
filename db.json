@@ -5,25 +5,25 @@
             "name": "n1",
             "cost": 1,
             "description": "describe 1"
-        }
+        },
         {
             "id": 2,
             "name": "n2",
             "cost": 2,
             "description": "describe 2"
-        }
+        },
         {
             "id": 3,
             "name": "n3",
             "cost": 3,
             "description": "describe 3"
-        }
+        },
         {
             "id": 4,
             "name": "n4",
             "cost": 4,
             "description": "describe 4"
-        }
+        },
         {
             "id": 5,
             "name": "n5",
