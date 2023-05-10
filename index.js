@@ -12,30 +12,30 @@ let totalCost = 0;
 
 
 //add the item to the order list
-function addToOrder(item){
+function addToOrder(item, size){
     //push item to the list
 
 //    orderList.push(item.name);
     //let h5 = document.createElement("h5");
     const orderLi = document.createElement("li");
-    orderLi.textContent = item.name + "    $" + item.cost;
+    orderLi.textContent = (item.size.length === 1)? item.name + ".......$" + item.cost[size]: item.name +" - " + item.size[size] + ".......$" + item.cost[size];
     const del = document.createElement("button");
 
     del.addEventListener("click", ()=>{
-        deleteItem(del, item);
+        deleteItem(del, item.cost[size]);
     });
     del.value = "X";
     orderLi.appendChild(del);
     document.getElementById("order-list").appendChild(orderLi);
     //add customize and remove buttons
     
-    totalCost += item.cost;
+    totalCost += item.cost[size];
 
 
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 }
-function deleteItem(del, item){
-    totalCost -= item.cost;
+function deleteItem(del, cost){
+    totalCost -= cost;
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
     del.parentNode.remove();
     
@@ -53,11 +53,11 @@ function addMenuItem(item){
     let h3 = document.createElement("dt");
     h3.textContent = item.description;
     let h4 = document.createElement("dd");
-    h4.textContent = "$"+item.cost;
+ //   h4.textContent = "$"+item.cost;
 
     if (item.size.length === 1) //no size options
     {
-   //     h4.textContent = "$"+item.cost[0];
+        h4.textContent = "$"+item.cost[0];
     }
     else{
         for (let size = 0; size < item.size.length; size++){
@@ -66,9 +66,9 @@ function addMenuItem(item){
             lab.for = "rad"+size;
             i.id = "rad"+size;
             i.type = "radio";
-            i.name = "size";// + item.id;
+            i.name = "size";
             i.value = size;
-            lab.textContent = item.size[size];
+            lab.textContent = item.size[size] + "   $"+ item.cost[size] + "     ";
 
             if (size == item.size.length -1)
                 i.checked = true;
@@ -85,7 +85,8 @@ function addMenuItem(item){
 
     form.addEventListener("submit", (e) =>{
         e.preventDefault();
-        addToOrder(item);
+        const size = (item.size.length === 1)? 0 : e.target.size.value;
+        addToOrder(item, size);
      //   console.log(e);
     });
 

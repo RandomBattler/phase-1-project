@@ -3,35 +3,35 @@
         {
             "id": 1,
             "name": "Pizza",
-            "cost": 14.99,
+            "cost": [7.49, 11.99, 14.99],
             "description": "describe 1",
             "size": ["Small", "Medium", "Large"]
         },
         {
             "id": 2,
             "name": "Garlic Bread",
-            "cost": 3.49,
+            "cost": [3.49],
             "description": "describe 2",
-            "size": []
+            "size": ["regular"]
         },
         {
             "id": 3,
             "name": "Wings",
-            "cost": 7.99,
+            "cost": [7.99],
             "description": "describe 3",
-            "size": []
+            "size": ["regular"]
         },
         {
             "id": 4,
             "name": "Salad",
-            "cost": 5,
+            "cost": [5],
             "description": "describe 4",
-            "size": []
+            "size": ["regular"]
         },
         {
             "id": 5,
             "name": "Soda",
-            "cost": 0.99,
+            "cost": [0.99, 1.49, 2.49],
             "description": "describe 5",
             "size": ["Small", "Medium", "Large"]
         }
