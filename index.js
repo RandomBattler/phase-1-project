@@ -45,6 +45,8 @@ function deleteItem(del, item){
 function addMenuItem(item){
     let it = document.createElement("div");
 
+    let form = document.createElement("form");
+    form.id = "form-"+item.name;
 
     let h2 = document.createElement("h3");
     h2.textContent = item.name;
@@ -53,8 +55,28 @@ function addMenuItem(item){
     let h4 = document.createElement("dd");
     h4.textContent = "$"+item.cost;
 
-    let form = document.createElement("form");
-    form.id = "form-"+item.name;
+    if (item.size.length === 1) //no size options
+    {
+   //     h4.textContent = "$"+item.cost[0];
+    }
+    else{
+        for (let size = 0; size < item.size.length; size++){
+            let i = document.createElement("input");
+            let lab = document.createElement("label");
+            lab.for = "rad"+size;
+            i.id = "rad"+size;
+            i.type = "radio";
+            i.name = "size";// + item.id;
+            i.value = size;
+            lab.textContent = item.size[size];
+
+            if (size == item.size.length -1)
+                i.checked = true;
+
+            form.append(i, lab);
+        }
+    }
+
 
     let button = document.createElement("button");
     button.type = "submit"
