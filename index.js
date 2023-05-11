@@ -9,11 +9,13 @@
 //welcome and closing screens
 
 const orderList = [];
+const toppingList = [];
 let totalCost = 0;
 
 
 //add the item to the order list
-function addToOrder(item, size){
+function addToOrder(item, e){
+    const size = (item.size.length === 1)? 0 : e.target.size.value;
     //push item to the list
 
 //    orderList.push(item.name);
@@ -56,7 +58,6 @@ function addMenuItem(item){
     let h3 = document.createElement("dt");
     h3.textContent = item.description;
     let h4 = document.createElement("dd");
- //   h4.textContent = "$"+item.cost;
 
     //show size options
     if (item.size.length === 1) //no size options
@@ -95,6 +96,7 @@ function addMenuItem(item){
             lab.textContent = topping;
             
             form.append(i, lab);
+            toppingList.push(i);
             value*= 2;
         });
     }
@@ -107,8 +109,9 @@ function addMenuItem(item){
 
     form.addEventListener("submit", (e) =>{
         e.preventDefault();
-        const size = (item.size.length === 1)? 0 : e.target.size.value;
-        addToOrder(item, size);
+       // const size = (item.size.length === 1)? 0 : e.target.size.value;
+        
+        addToOrder(item, e);
      //   console.log(e);
     });
 
