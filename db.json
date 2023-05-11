@@ -5,7 +5,8 @@
             "name": "Pizza",
             "cost": [7.49, 11.99, 14.99],
             "description": "describe 1",
-            "size": ["Small", "Medium", "Large"]
+            "size": ["Small", "Medium", "Large"],
+            "toppings": ["Pepperoni", "Sausage", "Ham", "Mushroom"]
         },
         {
             "id": 2,

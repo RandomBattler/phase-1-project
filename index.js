@@ -1,7 +1,8 @@
 //TO DO
-//change click to a form submit for adding order
+            //change click to a form submit for adding order
 //fix order list to take more than just the name
-//set radio buttons for sizes
+            //set radio buttons for sizes
+//check boxes for pizza toppings
 //edit order
 //Enter customer name
 //confirm and check out button
@@ -34,6 +35,8 @@ function addToOrder(item, size){
 
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 }
+
+//remove the item and adjust the price
 function deleteItem(del, cost){
     totalCost -= cost;
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
@@ -55,6 +58,7 @@ function addMenuItem(item){
     let h4 = document.createElement("dd");
  //   h4.textContent = "$"+item.cost;
 
+    //show size options
     if (item.size.length === 1) //no size options
     {
         h4.textContent = "$"+item.cost[0];
@@ -75,6 +79,24 @@ function addMenuItem(item){
 
             form.append(i, lab);
         }
+    }
+
+    //show pizza toppings
+    if (item.name === "Pizza"){
+        let value = 1;
+        item.toppings.forEach(topping => {
+            let i = document.createElement("input");
+            let lab = document.createElement("label");        
+            lab.for = "top"+value;
+            i.id = "top"+value;
+            i.type = "checkbox";
+            i.name = "toppings";
+            i.value = value;
+            lab.textContent = topping;
+            
+            form.append(i, lab);
+            value*= 2;
+        });
     }
 
 
