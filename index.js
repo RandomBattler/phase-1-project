@@ -54,6 +54,7 @@ function addMenuItem(item){
     form.id = "form-"+item.name;
     let img = document.createElement("img");
     img.src = item.image;
+    img.classList.add("menu-item");
 
     let h2 = document.createElement("h3");
     h2.textContent = item.name;

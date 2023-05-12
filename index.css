@@ -22,3 +22,8 @@ button:hover {
     color: #e04b52;
   }
   
+  .menu-item {
+    justify-self: center;
+    height: 10rem;
+    width: auto;
+  }
