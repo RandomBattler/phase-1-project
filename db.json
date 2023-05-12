@@ -3,6 +3,7 @@
         {
             "id": 1,
             "name": "Pizza",
+            "image": "img/pizza.jpg",
             "cost": [7.49, 11.99, 14.99],
             "description": "describe 1",
             "size": ["Small", "Medium", "Large"],
@@ -11,6 +12,7 @@
         {
             "id": 2,
             "name": "Garlic Bread",
+            "image": "img/bread.jpg",
             "cost": [3.49],
             "description": "describe 2",
             "size": ["regular"]
@@ -18,6 +20,7 @@
         {
             "id": 3,
             "name": "Wings",
+            "image": "img/wings.jpg",
             "cost": [7.99],
             "description": "describe 3",
             "size": ["regular"]
@@ -25,6 +28,7 @@
         {
             "id": 4,
             "name": "Salad",
+            "image": "img/salad.jpg",
             "cost": [5],
             "description": "describe 4",
             "size": ["regular"]
@@ -32,6 +36,7 @@
         {
             "id": 5,
             "name": "Soda",
+            "image": "img/soda.jpg",
             "cost": [0.99, 1.49, 2.49],
             "description": "describe 5",
             "size": ["Small", "Medium", "Large"]

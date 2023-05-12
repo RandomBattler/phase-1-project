@@ -52,6 +52,8 @@ function addMenuItem(item){
 
     let form = document.createElement("form");
     form.id = "form-"+item.name;
+    let img = document.createElement("img");
+    img.src = item.image;
 
     let h2 = document.createElement("h3");
     h2.textContent = item.name;
@@ -118,7 +120,7 @@ function addMenuItem(item){
     form.appendChild(button);
 
     h2.append(h3,h4);
-    it.append(h2,form);
+    it.append(img,h2,form);
     document.getElementById("menu-list").appendChild(it);
 
 }
