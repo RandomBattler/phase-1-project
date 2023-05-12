@@ -27,7 +27,7 @@ function addToOrder(item, e){
     del.addEventListener("click", ()=>{
         deleteItem(del, item.cost[size]);
     });
-    del.value = "X";
+    del.value = "  X  ";
     orderLi.appendChild(del);
     document.getElementById("order-list").appendChild(orderLi);
     //add customize and remove buttons
