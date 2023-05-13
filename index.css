@@ -1,6 +1,8 @@
 body {
-    margin: 0;
+    margin: 50;
     font-family: monospace;
+    display: grid;
+    grid-gap: 1em;
   }
 
   button {
@@ -26,4 +28,18 @@ button:hover {
     justify-self: center;
     height: 10rem;
     width: auto;
+    margin-top: 30px;
+  }
+
+  #menu-list {
+    border: 20px;
+    width: 50%;
+  }
+  #order-list {
+    height: auto;
+    width: 200px;
+    margin: 5px;
+    border: 10px  solid black;
+    background-color: #e04b52;
+    padding: 20px;
   }
