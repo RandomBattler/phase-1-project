@@ -1,9 +1,4 @@
 //TO DO
-            //change click to a form submit for adding order
-//fix order list to take more than just the name
-            //set radio buttons for sizes
-//check boxes for pizza toppings
-//edit order
 //Enter customer name
 //confirm and check out button
 //welcome and closing screens
@@ -18,7 +13,9 @@ function addToOrder(item, e){
     const size = (item.size.length === 1)? 0 : e.target.size.value;
     //push item to the list
 
-//    orderList.push(item.name);
+    const order = {};
+
+    
     const orderLi = document.createElement("li");
     orderLi.textContent = (item.size.length === 1)? item.name + ".......$" + item.cost[size]: item.name +" - " + item.size[size] + ".......$" + item.cost[size];
     orderLi.textContent += "            ";
@@ -30,8 +27,12 @@ function addToOrder(item, e){
     });
     del.className = "cancelBtn";
     del.textContent = "  X  ";
+    del.value = orderList.length;//get the possition in the order array
     orderLi.appendChild(del);
     document.getElementById("order-list").appendChild(orderLi);
+
+    order.name = orderLi.textContent;
+    order.node = del;
 
     if (item.name === "Pizza")//display toppings
     {
@@ -51,8 +52,12 @@ function addToOrder(item, e){
             const tList = document.createElement("dd");
             tList.textContent = topText;
             orderLi.appendChild(tList);
+
+            order.name += topText;
         }
     }
+
+    orderList.push(order);
 
     //add customize and remove buttons
     
@@ -66,6 +71,14 @@ function addToOrder(item, e){
 function deleteItem(del, cost){
     totalCost -= cost;
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
+
+    //fix up the order list if this is not the last element
+    if(del.value === orderList.length-1){
+        orderList[del.value] = orderList[orderList.length-1];
+        orderList[orderList.length-1].node.value = del.value;
+    }
+
+
     del.parentNode.remove();
     
 }
