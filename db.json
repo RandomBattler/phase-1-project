@@ -5,7 +5,7 @@
             "name": "Pizza",
             "image": "img/pizza.jpg",
             "cost": [7.49, 11.99, 14.99],
-            "description": "describe 1",
+            "description": "Classic hand tossed pizza",
             "size": ["Small", "Medium", "Large"],
             "toppings": ["Pepperoni", "Sausage", "Ham", "Mushroom"]
         },
@@ -14,7 +14,7 @@
             "name": "Garlic Bread",
             "image": "img/bread.jpg",
             "cost": [3.49],
-            "description": "describe 2",
+            "description": "Warm and tasty garlic bread",
             "size": ["regular"]
         },
         {
@@ -22,7 +22,7 @@
             "name": "Wings",
             "image": "img/wings.jpg",
             "cost": [7.99],
-            "description": "describe 3",
+            "description": "Hot and spicy Buffalo Wings",
             "size": ["regular"]
         },
         {
@@ -30,7 +30,7 @@
             "name": "Salad",
             "image": "img/salad.jpg",
             "cost": [5],
-            "description": "describe 4",
+            "description": "Fresh green salad",
             "size": ["regular"]
         },
         {
@@ -38,7 +38,7 @@
             "name": "Soda",
             "image": "img/soda.jpg",
             "cost": [0.99, 1.49, 2.49],
-            "description": "describe 5",
+            "description": "Your choice of fountain drinks",
             "size": ["Small", "Medium", "Large"]
         }
     ]

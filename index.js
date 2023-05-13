@@ -19,9 +19,29 @@ function addToOrder(item, e){
     //push item to the list
 
 //    orderList.push(item.name);
-    //let h5 = document.createElement("h5");
     const orderLi = document.createElement("li");
     orderLi.textContent = (item.size.length === 1)? item.name + ".......$" + item.cost[size]: item.name +" - " + item.size[size] + ".......$" + item.cost[size];
+    if (item.name === "Pizza")//display toppings
+    {
+        let top = false;
+        let topText = ""
+        //check if any of the topping boxes have been checked
+        for (let i = 0; i < toppingList.length; ++i){
+            if(toppingList[i].checked){
+                top = true;
+                topText += "   ---   " + item.toppings[i];
+                toppingList[i].checked = false;
+            }
+        }
+
+        if (top)//there are toppings
+        {
+            const tList = document.createElement("dd");
+            tList.textContent = topText;
+            orderLi.appendChild(tList);
+        }
+    }
+
     const del = document.createElement("button");
 
     del.addEventListener("click", ()=>{
@@ -112,10 +132,8 @@ function addMenuItem(item){
 
     form.addEventListener("submit", (e) =>{
         e.preventDefault();
-       // const size = (item.size.length === 1)? 0 : e.target.size.value;
         
         addToOrder(item, e);
-     //   console.log(e);
     });
 
     form.appendChild(button);

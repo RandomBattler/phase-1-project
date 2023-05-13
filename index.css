@@ -32,20 +32,23 @@ button:hover {
     justify-self: center;
     height: 10rem;
     width: auto;
-    margin-top: 30px;
+    margin: 30px;
     display: grid;
     grid-template-columns: 50%;
   }
 
   #menu-list {
     border: 20px;
-    width: 50%;
+    width: 30em;
+    display: flex;
+    margin: 20px;
   }
   #order-list {
     height: auto;
-    width: 200px;
+    width: 50%;
     margin: 5px;
     border: 10px  solid black;
-    background-color: #e04b52;
+    background-color: #e0a44b;
     padding: 20px;
   }
+
