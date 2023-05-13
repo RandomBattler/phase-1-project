@@ -21,6 +21,18 @@ function addToOrder(item, e){
 //    orderList.push(item.name);
     const orderLi = document.createElement("li");
     orderLi.textContent = (item.size.length === 1)? item.name + ".......$" + item.cost[size]: item.name +" - " + item.size[size] + ".......$" + item.cost[size];
+    orderLi.textContent += "            ";
+
+    const del = document.createElement("button");
+
+    del.addEventListener("click", ()=>{
+        deleteItem(del, item.cost[size]);
+    });
+    del.className = "cancelBtn";
+    del.textContent = "  X  ";
+    orderLi.appendChild(del);
+    document.getElementById("order-list").appendChild(orderLi);
+
     if (item.name === "Pizza")//display toppings
     {
         let top = false;
@@ -29,7 +41,7 @@ function addToOrder(item, e){
         for (let i = 0; i < toppingList.length; ++i){
             if(toppingList[i].checked){
                 top = true;
-                topText += "   ---   " + item.toppings[i];
+                topText += "   -   " + item.toppings[i];
                 toppingList[i].checked = false;
             }
         }
@@ -42,14 +54,6 @@ function addToOrder(item, e){
         }
     }
 
-    const del = document.createElement("button");
-
-    del.addEventListener("click", ()=>{
-        deleteItem(del, item.cost[size]);
-    });
-    del.value = "  X  ";
-    orderLi.appendChild(del);
-    document.getElementById("order-list").appendChild(orderLi);
     //add customize and remove buttons
     
     totalCost += item.cost[size];
