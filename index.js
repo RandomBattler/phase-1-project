@@ -130,4 +130,19 @@ function addMenuItem(item){
 document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/menu").then(response => response.json())
     .then(items => items.forEach(item=> addMenuItem(item)));
+
 })
+
+const form = document.querySelector("form.check-out");
+form.addEventListener("submit", (event)=> {
+    event.preventDefault();
+    const formData = Object.fromEntries(new FormData(event.target));
+//check if there is an order or a name
+    placeOrder(formData);
+})
+
+function placeOrder(form){
+    //post receipt to db
+    //message to customer
+    //clear the order
+}
