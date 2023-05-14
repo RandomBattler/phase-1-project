@@ -75,20 +75,5 @@
       ]
     }
   ],
-  "receipts": [
-    {
-      "cost": 29.98,
-      "name": "hjkl;",
-      "item0": "Pizza - Large",
-      "item1": "Pizza - Large   -   Ham",
-      "id": 1
-    },
-    {
-      "cost": 10.48,
-      "name": "zxcvb",
-      "item0": "Wings",
-      "item1": "Soda - Large",
-      "id": 2
-    }
-  ]
+  "receipts": []
 }

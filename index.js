@@ -210,3 +210,19 @@ function placeOrder(e){
     totalCost = 0;
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 }
+
+//Clear old receipts
+//I know this isn't the proper way to handle business receipts, but this is just for the project
+fetch("http://localhost:3000/receipts").then(response => response.json())
+    .then(items => items.forEach(item=> {
+        fetch(`http://localhost:3000/receipts/${item.id}`, {
+        method: "DELETE",
+        headers:
+        {
+        "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    }));
+
+    
