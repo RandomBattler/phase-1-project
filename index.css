@@ -55,3 +55,6 @@ button:hover {
     background-color: #e0a44b;
     padding: 20px;
   }
+  #total-cost {
+    font-size: 2em;
+  }
