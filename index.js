@@ -1,10 +1,6 @@
-//TO DO
-//Enter customer name
-//confirm and check out button
-//welcome and closing screens
 
-const orderList = [];
-const toppingList = [];
+const orderList = [];//Stores the items the customer added
+const toppingList = [];//Keeps track of the topping check boxed 
 let totalCost = 0;
 
 
@@ -163,13 +159,16 @@ function addMenuItem(item){
 
 }
 
-
+//Start displaying the menu
 document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/menu").then(response => response.json())
     .then(items => items.forEach(item=> addMenuItem(item)));
 
 })
 
+
+///////////////
+//Clicking the submit button to place the order
 const form = document.querySelector("form.check-out");
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
