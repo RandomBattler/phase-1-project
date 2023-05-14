@@ -9,6 +9,7 @@ body {
     font-family: monospace;
     display: grid;
     grid-gap: 1em;
+    background-color: coral;
   }
 
   button {
@@ -34,7 +35,7 @@ button:hover {
     justify-self: center;
     height: 10rem;
     width: auto;
-    margin: 30px;
+    margin: 50px;
     display: grid;
     grid-template-columns: 50%;
   }
