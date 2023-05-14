@@ -179,6 +179,10 @@ form.addEventListener("submit", (e)=> {
 function placeOrder(e){
     //post receipt to db
     //message to customer
+
+    alert(`Thank you, ${e.target.customer.value}! We'll get started on your order right away!`)
+
+
     //clear the order
     for (let i = orderList.length - 1; i >= 0; --i)
         deleteItem(orderList[i].node,0);
