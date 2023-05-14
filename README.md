@@ -29,4 +29,4 @@ from the order array and adjusts the total cost.
 
 After you've placed your order, there is an input box to enter the customer name. Clicking the 
 submit button will send a thank you message to the customer and clear out the check out screen 
-so the next order can be started.
+so the next order can be started. The receipt is also posted to the db. 

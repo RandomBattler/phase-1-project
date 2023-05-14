@@ -182,11 +182,10 @@ function placeOrder(e){
     order.cost = totalCost;
     order.name = e.target.customer.value;
     for (let i = 0; i < orderList.length; ++i){
-        let item = `item${i}`;
+        let item = `item${i+1}`;
         order[item] = orderList[i].name;
     }
 
-    console.log(order);
     fetch("http://localhost:3000/receipts", {
     method: "POST",
     headers:
