@@ -75,5 +75,13 @@
       ]
     }
   ],
-  "receipts": []
+  "receipts": [
+    {
+      "cost": 11.48,
+      "name": "aadsf",
+      "item1": "Garlic Bread",
+      "item2": "Wings",
+      "id": 1
+    }
+  ]
 }
