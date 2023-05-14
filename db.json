@@ -1,45 +1,94 @@
 {
-    "menu":[
-        {
-            "id": 1,
-            "name": "Pizza",
-            "image": "img/pizza.jpg",
-            "cost": [7.49, 11.99, 14.99],
-            "description": "Classic hand tossed pizza",
-            "size": ["Small", "Medium", "Large"],
-            "toppings": ["Pepperoni", "Sausage", "Ham", "Mushroom"]
-        },
-        {
-            "id": 2,
-            "name": "Garlic Bread",
-            "image": "img/bread.jpg",
-            "cost": [3.49],
-            "description": "Warm and tasty garlic bread",
-            "size": ["regular"]
-        },
-        {
-            "id": 3,
-            "name": "Wings",
-            "image": "img/wings.jpg",
-            "cost": [7.99],
-            "description": "Hot and spicy Buffalo Wings",
-            "size": ["regular"]
-        },
-        {
-            "id": 4,
-            "name": "Salad",
-            "image": "img/salad.jpg",
-            "cost": [5],
-            "description": "Fresh green salad",
-            "size": ["regular"]
-        },
-        {
-            "id": 5,
-            "name": "Soda",
-            "image": "img/soda.jpg",
-            "cost": [0.99, 1.49, 2.49],
-            "description": "Your choice of fountain drinks",
-            "size": ["Small", "Medium", "Large"]
-        }
-    ]
+  "menu": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "image": "img/pizza.jpg",
+      "cost": [
+        7.49,
+        11.99,
+        14.99
+      ],
+      "description": "Classic hand tossed pizza",
+      "size": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "toppings": [
+        "Pepperoni",
+        "Sausage",
+        "Ham",
+        "Mushroom"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Garlic Bread",
+      "image": "img/bread.jpg",
+      "cost": [
+        3.49
+      ],
+      "description": "Warm and tasty garlic bread",
+      "size": [
+        "regular"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Wings",
+      "image": "img/wings.jpg",
+      "cost": [
+        7.99
+      ],
+      "description": "Hot and spicy Buffalo Wings",
+      "size": [
+        "regular"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Salad",
+      "image": "img/salad.jpg",
+      "cost": [
+        5
+      ],
+      "description": "Fresh green salad",
+      "size": [
+        "regular"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Soda",
+      "image": "img/soda.jpg",
+      "cost": [
+        0.99,
+        1.49,
+        2.49
+      ],
+      "description": "Your choice of fountain drinks",
+      "size": [
+        "Small",
+        "Medium",
+        "Large"
+      ]
+    }
+  ],
+  "receipts": [
+    {
+      "cost": 29.98,
+      "name": "hjkl;",
+      "item0": "Pizza - Large",
+      "item1": "Pizza - Large   -   Ham",
+      "id": 1
+    },
+    {
+      "cost": 10.48,
+      "name": "zxcvb",
+      "item0": "Wings",
+      "item1": "Soda - Large",
+      "id": 2
+    }
+  ]
 }

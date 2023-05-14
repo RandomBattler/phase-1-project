@@ -17,8 +17,10 @@ function addToOrder(item, e){
 
     
     const orderLi = document.createElement("li");
-    orderLi.textContent = (item.size.length === 1)? item.name + ".......$" + item.cost[size]: item.name +" - " + item.size[size] + ".......$" + item.cost[size];
-    orderLi.textContent += "            ";
+    orderLi.textContent = (item.size.length === 1)? item.name: item.name +" - " + item.size[size];
+    order.name = orderLi.textContent;
+
+    orderLi.textContent +=  ".......$" + item.cost[size] + "            ";
 
     const del = document.createElement("button");
 
@@ -31,7 +33,7 @@ function addToOrder(item, e){
     orderLi.appendChild(del);
     document.getElementById("order-list").appendChild(orderLi);
 
-    order.name = orderLi.textContent;
+    
     order.node = del;
 
     if (item.name === "Pizza")//display toppings
@@ -58,8 +60,6 @@ function addToOrder(item, e){
     }
 
     orderList.push(order);
-
-    //add customize and remove buttons
     
     totalCost += item.cost[size];
 
@@ -178,8 +178,27 @@ form.addEventListener("submit", (e)=> {
 
 function placeOrder(e){
     //post receipt to db
-    //message to customer
+    const order = {};
+    order.cost = totalCost;
+    order.name = e.target.customer.value;
+    for (let i = 0; i < orderList.length; ++i){
+        let item = `item${i}`;
+        order[item] = orderList[i].name;
+    }
 
+    console.log(order);
+    fetch("http://localhost:3000/receipts", {
+    method: "POST",
+    headers:
+    {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+
+    body: JSON.stringify(order)
+  }).then((response) => response.json())
+    
+    //message to customer
     alert(`Thank you, ${e.target.customer.value}! We'll get started on your order right away!`)
 
 
