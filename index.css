@@ -41,8 +41,9 @@ button:hover {
 
   #menu-list {
     border: 20px;
-    width: 30em;
+    width: 80%;
     display: flex;
+    flex-wrap: wrap;
     margin: 20px;
   }
   #order-list {

@@ -106,6 +106,7 @@ function addMenuItem(item){
     }
     else{
         for (let size = 0; size < item.size.length; size++){
+            const li = document.createElement("li"); 
             let i = document.createElement("input");
             let lab = document.createElement("label");
             lab.for = "rad"+size;
@@ -118,7 +119,8 @@ function addMenuItem(item){
             if (size == item.size.length -1)
                 i.checked = true;
 
-            form.append(i, lab);
+            li.append(i, lab);
+            form.appendChild(li);
         }
     }
 
