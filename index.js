@@ -69,18 +69,18 @@ function addToOrder(item, e){
 
 //remove the item and adjust the price
 function deleteItem(del, cost){
+    
     totalCost -= cost;
     document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 
     //fix up the order list if this is not the last element
-    if(del.value === orderList.length-1){
+    if(del.value != orderList.length-1){
         orderList[del.value] = orderList[orderList.length-1];
         orderList[orderList.length-1].node.value = del.value;
     }
 
-
+    orderList.pop();
     del.parentNode.remove();
-    
 }
 
 //populate the menu display
@@ -169,15 +169,21 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const form = document.querySelector("form.check-out");
-form.addEventListener("submit", (event)=> {
-    event.preventDefault();
-    const formData = Object.fromEntries(new FormData(event.target));
+form.addEventListener("submit", (e)=> {
+    e.preventDefault();
 //check if there is an order or a name
-    placeOrder(formData);
+    if (orderList.length > 0 && e.target.customer.value != "")
+        placeOrder(e);
 })
 
-function placeOrder(form){
+function placeOrder(e){
     //post receipt to db
     //message to customer
     //clear the order
+    for (let i = orderList.length - 1; i >= 0; --i)
+        deleteItem(orderList[i].node,0);
+
+    e.target.customer.value = "";
+    totalCost = 0;
+    document.getElementById("total-cost").innerText = "$"+totalCost.toFixed(2);
 }
