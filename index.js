@@ -174,7 +174,11 @@ const form = document.querySelector("form.check-out");
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
 //check if there is an order or a name
-    if (orderList.length > 0 && e.target.customer.value != "")
+    if(orderList == 0)
+        alert("You need to add menu items to place an order.");
+    else if ( e.target.customer.value === "")
+        alert("We need a name to go with the order.")
+    else
         placeOrder(e);
 })
 

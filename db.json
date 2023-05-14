@@ -75,5 +75,12 @@
       ]
     }
   ],
-  "receipts": []
+  "receipts": [
+    {
+      "cost": 14.99,
+      "name": "qwerty",
+      "item1": "Pizza - Large",
+      "id": 1
+    }
+  ]
 }
